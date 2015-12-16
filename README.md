@@ -24,7 +24,7 @@ The application is live at: [52.10.104.69][1] and [ec2-52-10-104-69.us-west-2.co
  - `dpkg-reconfigure -plow unattended-upgrades`
  
 #### Step 4. Configure the local timezone to UTC.
-Sources: [1][11] & [2][12]
+Sources: [link][11] & [link][12]
  - `dpkg-reconfigure tzdata`
  - `apt-get install ntp`
  - `vim /etc/ntp.conf` 
@@ -204,7 +204,7 @@ Sources: [1][7] & [2][8]
 
  
  #### Step 10. Install Glances and failban for monitoring and preventing abusive use of the system
- Sources: [13] [14]
+ Sources: [link][13] | [link][14]
  - `apt-get install python-pip build-essential python-dev`
  - `pip install Glances`
  - `apt-get install lm-sensors`
@@ -216,7 +216,9 @@ Sources: [1][7] & [2][8]
   - destemail = grader@localhost
  - `apt-get install sendmail iptables-persistent`
  - `service fail2ban restart`
-
+ 
+#### To run glances and see some output in the terminal:
+ - `glances`
 
 [1]: http://52.10.104.69/
 [2]: http://ec2-52-10-104-69.us-west-2.compute.amazonaws.com/
