@@ -24,13 +24,13 @@ The application is live at: [52.10.104.69][1] and [ec2-52-10-104-69.us-west-2.co
  - `dpkg-reconfigure -plow unattended-upgrades`
  
 #### Step 4. Configure the local timezone to UTC.
-Sources: [link][11] & [link][12]
+Sources: [link][11] | [link][12]
  - `dpkg-reconfigure tzdata`
  - `apt-get install ntp`
  - `vim /etc/ntp.conf` 
  
 #### Step 5. Change the SSH port from 22 to 2200
-Sources: [1][15]
+Sources: [link][15]
  - `vim /etc/ssh/sshd_config` 
  - `Change PermitRootLogin from without-password to no`
  - `Temporalily change PasswordAuthentication from no to yes.`
@@ -49,14 +49,14 @@ Sources: [1][15]
  - `service ssh restart`
 
 #### Step 6. Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
-Sources: [1][16] & [2][17]
+Sources: [link][16] | [link][17]
  - `sudo ufw allow 2200/tcp`
  - `sudo ufw allow 80/tcp` 
  - `sudo ufw allow 123/udp`
  - `sudo ufw enable`
  
 #### Step 7. Install and configure Apache to serve a Python mod_wsgi application 
- Sources: [1][5] & [2][6]
+ Sources: [link][5] | [link][6]
  - `apt-get install apache2`
  - `apt-get install python-setuptools libapache2-mod-wsgi`
  - `echo "ServerName ec2-52-10-104-69.us-west-2.compute.amazonaws.com" | sudo tee /etc/apache2/conf-available/fqdn.conf`
@@ -66,6 +66,7 @@ Sources: [1][16] & [2][17]
  - `service apache2 restart`
  
 #### Step 8. Install and configure PostgreSQL:
+Sources: [link][10]
  - `sudo apt-get install postgresql postgresql-contrib`
  - a) Do not allow remote connections (default):
  - `sudo vim /etc/postgresql/9.3/main/pg_hba.conf`
@@ -98,7 +99,7 @@ Sources: [1][16] & [2][17]
  - `python load_catalog_data.py` 
  
 #### Step 9. Install git, clone and set up your Catalog App project (from your GitHub repository from earlier in the Nanodegree program) so that it functions correctly when visiting your server’s IP address in a browser. Remember to set this up appropriately so that your .git directory is not publicly accessible via a browser!
-
+Sources: [link][18]
  - Install Git:
  - `sudo apt-get install git`
  - Set your name, e.g. for the commits:
@@ -138,7 +139,7 @@ Sources: [1][16] & [2][17]
  - `pip install dict2xml`
 
 #### More configurations:
-Sources: [1][7] & [2][8]
+Sources: [link][7] | [link][8]
 
  - Extend Python with additional packages that enable Apache to serve Flask applications:
  - `sudo apt-get install libapache2-mod-wsgi python-dev`
@@ -237,3 +238,4 @@ Sources: [1][7] & [2][8]
 [15]: https://wiki.archlinux.org/index.php/SSH_keys
 [16]: https://help.ubuntu.com/community/UFW
 [17]: https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server
+[18]: https://help.github.com/articles/set-up-git/#platform-linux
