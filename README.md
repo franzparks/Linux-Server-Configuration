@@ -44,8 +44,8 @@ Sources: [link][15]
  - Back on root session on the server, switch to grader: `su - grader`
  - `mkdir ~/.ssh`
  - `chmod 700 ~/.ssh`
- - `cat ~/id_rsa.pub >> ~/.ssh/authorized_keys`
- - `rm ~/id_rsa.pub`
+ - `cat ~/grader_key.pub >> ~/.ssh/authorized_keys`
+ - `rm ~/grader_key.pub`
  - `chmod 600 ~/.ssh/authorized_keys`
  - `exit`
  - `service ssh restart`
