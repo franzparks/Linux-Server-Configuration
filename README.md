@@ -6,7 +6,7 @@ Installation of Ubuntu Linux on Amazon’s Elastic Compute Cloud (EC2) virtual m
 
 The application is live at: [52.10.104.69] and [ec2-52-10-104-69.us-west-2.compute.amazonaws.com/]
 
-##Steps to prepare the server
+##Summary of software installed and configurations made
 
 ###Step 1: 
 - Create new development environment at:
