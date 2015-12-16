@@ -16,7 +16,6 @@ The application is live at: [52.10.104.69][1] and [ec2-52-10-104-69.us-west-2.co
 #### Step 2: Create a new user named grader and grant this user sudo permissions.
  -  `adduser grader`
  -  `visudo` ( add "grader ALL=(ALL:ALL) ALL" under line "root ALL ..." )
- -  
  
 #### Step 3. Update all currently installed packages:
  - `apt-get update`
@@ -25,13 +24,13 @@ The application is live at: [52.10.104.69][1] and [ec2-52-10-104-69.us-west-2.co
  - `dpkg-reconfigure -plow unattended-upgrades`
  
 #### Step 4. Configure the local timezone to UTC.
-Ubuntu Docs: [1][11] & [2][12]
+Sources: [1][11] & [2][12]
  - `dpkg-reconfigure tzdata`
  - `apt-get install ntp`
  - `vim /etc/ntp.conf` 
  
 #### Step 5. Change the SSH port from 22 to 2200
-Arch Linux: [1][15]
+Sources: [1][15]
  - `vim /etc/ssh/sshd_config` 
  - `Change PermitRootLogin from without-password to no`
  - `Temporalily change PasswordAuthentication from no to yes.`
@@ -50,14 +49,14 @@ Arch Linux: [1][15]
  - `service ssh restart`
 
 #### Step 6. Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
-Ufw Docs & Digital Ocean: [1][16] & [2][17]
+Sources: [1][16] & [2][17]
  - `sudo ufw allow 2200/tcp`
  - `sudo ufw allow 80/tcp` 
  - `sudo ufw allow 123/udp`
  - `sudo ufw enable`
  
 #### Step 7. Install and configure Apache to serve a Python mod_wsgi application 
- Udacity & Ubuntu: [1][5] & [2][6]
+ Sources: [1][5] & [2][6]
  - `apt-get install apache2`
  - `apt-get install python-setuptools libapache2-mod-wsgi`
  - `echo "ServerName ec2-52-10-104-69.us-west-2.compute.amazonaws.com" | sudo tee /etc/apache2/conf-available/fqdn.conf`
@@ -139,7 +138,7 @@ Ufw Docs & Digital Ocean: [1][16] & [2][17]
  - `pip install dict2xml`
 
 #### More configurations:
-Apache Docs & Digital Ocean: [1][7] & [2][8]
+Sources: [1][7] & [2][8]
 
  - Extend Python with additional packages that enable Apache to serve Flask applications:
  - `sudo apt-get install libapache2-mod-wsgi python-dev`
@@ -177,7 +176,7 @@ Apache Docs & Digital Ocean: [1][7] & [2][8]
  - Enable the virtual host:
  - `sudo a2ensite catalog`
  
- ##### Create the .wsgi File and Restart Apache
+#### Create the .wsgi File and Restart Apache
 
  - Create wsgi file:
  - `cd /var/www/catalog and $ sudo vim catalog.wsgi`
@@ -205,7 +204,7 @@ Apache Docs & Digital Ocean: [1][7] & [2][8]
 
  
  #### Step 10. Install Glances and failban for monitoring and preventing abusive use of the system
- Glances & Fail2ban: [1][13] & [2][14]
+ Sources: [13] [14]
  - `apt-get install python-pip build-essential python-dev`
  - `pip install Glances`
  - `apt-get install lm-sensors`
