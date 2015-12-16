@@ -39,7 +39,7 @@ Sources: [link][15]
  - `service ssh restart`
  - Generate ssh key On local machine: `ssh-keygen`
  - Create ssh key and save in a created file called `grader_key` in the `.ssh` directory when prompted for a location
- - Copy saved key (public) from local machine into the ubuntu server (if facing difficulties, copy key manually into   .ssh/authorized_keys on server and restart ssh service)
+ - Copy saved key (public) from local machine into the ubuntu server 
  - `scp ~/.ssh/grader_key.pub grader@52.10.104.69`
  - Back on root session on the server, switch to grader: `su - grader`
  - `mkdir ~/.ssh`
@@ -47,6 +47,7 @@ Sources: [link][15]
  - `cat ~/grader_key.pub >> ~/.ssh/authorized_keys`
  - `rm ~/grader_key.pub`
  - `chmod 600 ~/.ssh/authorized_keys`
+ - (if facing difficulties in previous steps, copy key manually into   .ssh/authorized_keys)
  - `exit`
  - `service ssh restart`
 
