@@ -148,11 +148,7 @@ Sources: [link][7] | [link][8]
  - `sudo apt-get install libapache2-mod-wsgi python-dev`
  - Enable mod_wsgi (if not already enabled):
  - `sudo a2enmod wsgi`
- - Create a Flask app:
- - Move to the /var/www/catalog/catalog directory:
- - `cd /var/www/catalog/catalog`
- - `sudo mkdir static templates`
-
+ 
 ##### Configure and Enable a New Virtual Host#
  - Create a virtual host config file
  - `sudo nano /etc/apache2/sites-available/catalog.conf`
@@ -221,7 +217,7 @@ Sources: [link][7] | [link][8]
  - `apt-get install sendmail iptables-persistent`
  - `service fail2ban restart`
  
-#### To run glances and see some output in the terminal:
+#### To check glances output:
  - `glances`
 
 [1]: http://52.10.104.69/
