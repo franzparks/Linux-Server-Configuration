@@ -1,12 +1,13 @@
 # Linux-Server-Configuration
 Udacity Project 5 - Linux Server Configuration project
-Project Description
+
+##Project Description
 
 Installation of Ubuntu Linux on Amazon’s Elastic Compute Cloud (EC2) virtual machine to host  the Flask web application from Project 3: Item Catalog and make it accessible to the public.
 
 The application is live at: [52.10.104.69][1] and [ec2-52-10-104-69.us-west-2.compute.amazonaws.com/][2]
 
-##Summary of software installed and configurations made
+## Summary of software installed and configurations made
 
 #### Step 1. Launch virtual Machine with  Udacity account and launch and log in:
  -  `mv ~/Downloads/udacity_key.rsa ~/.ssh/`
